@@ -1,27 +1,32 @@
-# TomatoClock
+# 第一關 - 番茄鐘
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+![image](https://s3-us-west-2.amazonaws.com/thef2e-hexschool/avatars/LdIFJdj0D1C4ZahcOcLcQ3vOqNiSV2GOqAVBrugzJBCocMJPpzOOuF0NLxE6Ldd044PKkNfV9KRUF0uakE72dALgIP6UaHaQegkpz17cQAqyT42Rj8xiWhdoZLIDvzET.png)
 
-## Development server
+## User story
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* 我可以記錄代辦任務
+* 我可以設定蕃茄鐘定時器
+* 我可以透過報表檢視使用狀況
 
-## Code scaffolding
+## Functional map
+* 待辦事項
+  * 設定待辦事項名稱或內容
+  * 設定待辦事項成已完成狀態
+  * 調整排列順序
+  
+* 蕃茄鐘
+  * 固定時間區間
+    * 主工作時間：25 分鐘
+    * 短休息時間：5 分鐘
+  
+  * 時間倒數介面
+    * 顯示進行中待辦事項
+    * 有開始鍵能啟動倒數
+    * 能暫停倒數
+    * 能略過倒數（作廢）
+    * 顯示倒數時間
+    * 提示鈴聲選項
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* 狀態報表
+  * 當天使用蕃茄鐘的記錄與成效
+  * 當週使用蕃茄鐘的記錄與成效 　
