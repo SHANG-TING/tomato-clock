@@ -1,0 +1,101 @@
+<main class="container bg-pink" style="height:800px">
+  <div class="row h-100">
+    <div class="info col-5 d-flex flex-column">
+      <div>
+        <input
+          type="text"
+          class="search w-100"
+          placeholder="add a new mission…"
+          (keyup.enter)="
+            todoService.newTodo($event.target.value); tomato.init()
+          "
+        />
+      </div>
+      <i class="flex-fill"></i>
+      <div class="d-flex">
+        <div class="small-ball border border-accent rounded-circle"></div>
+        <div class="ml-3">
+          <h4 class="text-uppercase">
+            {{ tomato.currentTodo.name }} [progress:
+            {{ tomato.progress | percent }}]
+          </h4>
+          <div class="little-ball border border-primary rounded-circle"></div>
+        </div>
+      </div>
+      <h1 class="clock text-center">
+        {{ tomato.remainingTime | date: 'mm:ss' }}
+      </h1>
+      <i class="flex-fill"></i>
+      <ul>
+        <ng-container *ngIf="tomato.otherTodos.length > 0; else notFound">
+          <li
+            class="d-flex align-items-center p-1"
+            *ngFor="let todo of tomato.otherTodos | slice: 0:6"
+          >
+            <div class="item-ball border border-accent rounded-circle"></div>
+            <h6
+              class="text-uppercase m-0 ml-2"
+              (click)="todo.isCompleted = true; tomato.init()"
+            >
+              {{ todo ? todo.name : '???' }}
+            </h6>
+            <i class="flex-fill"></i>
+            <i class="material-icons" (click)="tomato.play(todo)">
+              play_circle_outline
+            </i>
+          </li>
+        </ng-container>
+        <ng-template #notFound>
+          NO MORE TO-DO
+        </ng-template>
+        <li class="text-right">
+          <a
+            [routerLink]="['../todo-list']"
+            class="text-primary font-weight-bold"
+          >
+            MORE
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="action col-5 row position-relative">
+      <div class="col-6 bg-pink h-100"></div>
+      <div class="col-6 bg-accent h-100"></div>
+      <app-tomato-clock
+        class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
+        (play)="tomato.play(tomato.currentTodo)"
+      ></app-tomato-clock>
+    </div>
+
+    <div
+      class="control col bg-accent d-flex flex-column align-items-center py-5"
+    >
+      <ul class="page-icons">
+        <li>
+          <a [routerLink]="['../todo-list']"
+            ><i class="material-icons text-white h1">
+              list
+            </i></a
+          >
+        </li>
+        <li>
+          <a [routerLink]="['../analytics']"
+            ><i class="material-icons text-white h1">
+              insert_chart_outlined
+            </i></a
+          >
+        </li>
+        <li>
+          <a
+            ><i class="material-icons text-white h1">
+              library_music
+            </i></a
+          >
+        </li>
+      </ul>
+      <i class="flex-fill"></i>
+      <h4 class="brand text-white m-0 font-weight-bold">POMODORO</h4>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,19 @@
+$primary:#FF4384;
+$accent:#003164;
+
+@mixin flex_width($width) {
+  flex: 1 1 $width;
+
+  @if $width !=auto {
+    max-width: $width;
+    min-width: $width;
+  }
+  @else {
+    max-width: initial;
+    min-width: initial;
+  }
+}
+
+@mixin transition($time:195ms) {
+  transition: all $time cubic-bezier(.4,0,1,1);
+}

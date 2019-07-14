@@ -1,0 +1,68 @@
+
+@import '../../../styles/_veriable.scss';
+
+$ball-width:475px;
+.play{
+  z-index: 1;
+  width: $ball-width;
+  height: $ball-width;
+  border: 2px solid $primary;
+  padding: 10px;
+  background-clip: content-box;
+
+  .icon{
+    $ball-width:96px;
+    height: $ball-width;
+    width: $ball-width;
+    position: relative;
+    background:white;
+
+    &::before{
+      $trangle:$ball-width / 4;
+      content: '';
+      width: $trangle;
+      height: $trangle;
+      position: absolute;
+      border-width: $trangle 0 $trangle $trangle * 1.41421;
+      border-color: transparent transparent transparent $primary;
+      border-style: solid;
+      left: $trangle * 1.5;
+      top: $trangle;
+      @include transition()
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right:0;
+      background:#fff;
+      $ball-width:12px;
+      width: $ball-width;
+      height: $ball-width;
+      margin: 6px;
+      transform: translateX(24px);
+      @include transition()
+    }
+
+
+    &:hover{
+      background:$accent;
+      box-shadow: 0 6px 6px -3px rgba(0,0,0,.2), 0 10px 14px 1px rgba(0,0,0,.14), 0 4px 18px 3px rgba(0,0,0,.12);
+      &::before{
+        border-color: transparent transparent transparent white;
+      }
+
+      &::after{      
+        background:$accent;
+      }
+    }
+  }
+}
+
+
+.pause{
+  div{
+    width:10px;
+    background:white;
+  }
+}

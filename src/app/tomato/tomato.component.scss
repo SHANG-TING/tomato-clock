@@ -1,0 +1,62 @@
+//https://codepen.io/krishanbchand/pen/EzXKVJ?editors=1100
+@import '../../styles/_veriable.scss';
+
+.text-primary{
+  color: $primary;
+}
+
+.info{
+  margin: 48px 30px 48px 85px
+}
+
+.action{
+}
+
+.control{
+}
+
+.search{
+  border:none;
+  background: white;
+  color: $primary;
+  padding: 18px 16px;
+  font-weight: 500;
+  &::placeholder { 
+    color: $primary;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 700;
+  }
+}
+
+$ball-width:48px;
+.small-ball{
+  border-width: 2px !important;
+  height: $ball-width;
+  width: $ball-width;
+}
+
+$ball-width:18px;
+.item-ball{
+  border-width: 2px !important;
+  height: $ball-width;
+  width: $ball-width;
+}
+
+$ball-width:12px;
+.little-ball{
+  height: $ball-width;
+  width: $ball-width;
+}
+
+.clock{
+  font-size: 160px;
+  color: $primary;
+    font-weight: 700;
+}
+
+
+.brand{
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
